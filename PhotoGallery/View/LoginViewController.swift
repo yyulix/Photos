@@ -23,8 +23,17 @@ class LoginViewController: UIViewController {
         return passwordInput
     }
 
-    private lazy var signInButton = CustomRoundedButton(title: "Sign In")
-    private lazy var signUpButton = AttributedCustomButton(firstPart: "Are you not registered? ", secondPart: "Sign Up")
+    private lazy var signInButton : CustomRoundedButton = {
+        let button = CustomRoundedButton(title: "Sign In")
+        button.button.addTarget(self, action: #selector(SignIn), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var signUpButton : AttributedCustomButton = {
+        let button = AttributedCustomButton(firstPart: "Are you not registered? ", secondPart: "Sign Up")
+        button.addTarget(self, action: #selector(SignUp), for: .touchUpInside)
+        return button
+    }()
 
     // MARK: - Public Methods
     // MARK: - Override Methods
@@ -46,5 +55,15 @@ class LoginViewController: UIViewController {
         stack.topAnchor.constraint(equalTo: view.topAnchor, constant: UIConstants.paddingTop + UIConstants.spacing).isActive = true
         stack.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         stack.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+    }
+    
+    @objc func SignUp(){
+        let controller = RegistrationController()
+        navigationController?.pushViewController(controller, animated: false)
+    }
+
+    @objc func SignIn() {
+        guard let username = usernameInputView.textField.text else { return }
+        guard let password = passwordInputView.textField.text else { return }
     }
 }

@@ -17,6 +17,8 @@ final class CustomRoundedButton: UIView {
 
     // MARK: - Public Properties
     // MARK: - Private Properties
+    public lazy var button = UIButton(type: .system)
+    
     // MARK: - Initialisers
     
     init(title: String, target: Any? = nil, action: Selector? = nil) {
@@ -25,7 +27,6 @@ final class CustomRoundedButton: UIView {
 
         heightAnchor.constraint(equalToConstant: UIConstants.height).isActive = true
 
-        let button = UIButton(type: .system)
         if let target = target, let action = action {
             button.addTarget(target, action: action, for: .touchUpInside)
         }

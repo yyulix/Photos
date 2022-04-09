@@ -17,7 +17,9 @@ class RegistrationController: UIViewController {
 
     // MARK: - Public Property
     // MARK: - Private Property
+    
     private lazy var usernameInputView = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: "Enter username")
+    
     private var passwordInputView : InputField {
         lazy var passwordInput = InputField(labelImage: UIImage.AuthIcons.lockIcon, placeholderText: "Enter password")
         passwordInput.textField.isSecureTextEntry = true
@@ -28,9 +30,19 @@ class RegistrationController: UIViewController {
         retypePasswordInput.textField.isSecureTextEntry = true
         return retypePasswordInput
     }
-    private lazy var registerButton = CustomRoundedButton(title: "Sign Up")
-    private lazy var signInButton = AttributedCustomButton(firstPart: "Are you already registered? ", secondPart: "Sign In")
 
+    private lazy var registerButton : CustomRoundedButton = {
+        let button = CustomRoundedButton(title: "Sign Up")
+        button.button.addTarget(self, action: #selector(SignUp), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var signInButton : AttributedCustomButton = {
+        let button = AttributedCustomButton(firstPart: "Are you already registered? ", secondPart: "Sign In")
+        button.addTarget(self, action: #selector(SignIn), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - Public Methods
     // MARK: - Override Methods
     override func viewDidLoad() {
@@ -51,5 +63,17 @@ class RegistrationController: UIViewController {
         stack.topAnchor.constraint(equalTo: view.topAnchor, constant: UIConstants.paddingTop + UIConstants.spacing).isActive = true
         stack.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         stack.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+    }
+    
+    @objc func SignIn(){
+        let controller = LoginViewController()
+        navigationController?.pushViewController(controller, animated: false)
+    }
+
+    @objc func SignUp() {
+        guard let username = usernameInputView.textField.text else { return }
+        guard let password = passwordInputView.textField.text else { return }
+        guard let retypedPassword = retypePasswordInputView.textField.text else { return }
+
     }
 }
