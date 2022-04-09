@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
         static let paddingTop = 44.0 + (UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0)
     }
 
+    let authService = AuthService.shared
+    
     // MARK: - Public Property
     // MARK: - Private Property
     private lazy var usernameInputView = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: "Enter username")
@@ -65,5 +67,12 @@ class LoginViewController: UIViewController {
     @objc func SignIn() {
         guard let username = usernameInputView.textField.text else { return }
         guard let password = passwordInputView.textField.text else { return }
+        authService.initUserDefaults()
+        if authService.signIn(username: username, password: password) == true {
+            let controller = GalleryViewController()
+            navigationController?.pushViewController(controller, animated: false)
+        } else {
+            print("error")
+        }
     }
 }

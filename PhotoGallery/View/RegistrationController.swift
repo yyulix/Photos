@@ -43,6 +43,8 @@ class RegistrationController: UIViewController {
         return button
     }()
     
+    private let authService = AuthService.shared
+    
     // MARK: - Public Methods
     // MARK: - Override Methods
     override func viewDidLoad() {
@@ -71,9 +73,31 @@ class RegistrationController: UIViewController {
     }
 
     @objc func SignUp() {
-        guard let username = usernameInputView.textField.text else { return }
-        guard let password = passwordInputView.textField.text else { return }
-        guard let retypedPassword = retypePasswordInputView.textField.text else { return }
+        guard let username = usernameInputView.textField.text else {
+            print("no username")
+            return
+        }
 
+        guard let password = passwordInputView.textField.text else {
+            print("no password")
+            return
+        }
+
+        guard let retypedPassword = retypePasswordInputView.textField.text else {
+            print("no password")
+            return
+        }
+        
+        if password != retypedPassword {
+            print("Passwords are not the same")
+            return
+        }
+        authService.initUserDefaults()
+        if authService.signUp(username: username, password: password) == true {
+            let controller = GalleryViewController()
+            navigationController?.pushViewController(controller, animated: false)
+        } else {
+            print("error")
+        }
     }
 }
