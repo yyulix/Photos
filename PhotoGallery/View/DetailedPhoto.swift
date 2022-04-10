@@ -58,6 +58,11 @@ class DetailedPhoto: UIViewController {
     @objc private func updatePhoto() {
         let codedImage = iv.image?.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
         service.setProfilePicture(string: codedImage)
+        let alert = UIAlertController(title: nil, message: "Photo was updated!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            alert.dismiss(animated: false, completion: nil)
+        }))
+        self.present(alert, animated: true)
     }
     
     @objc private func back() {

@@ -76,22 +76,38 @@ class RegistrationController: UIViewController {
 
     @objc func SignUp() {
         guard let username = usernameInputView.textField.text else {
-            print("no username")
+            let alert = UIAlertController(title: nil, message: "No username", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                alert.dismiss(animated: false, completion: nil)
+            }))
+            self.present(alert, animated: true)
             return
         }
 
         guard let password = passwordInputView.textField.text else {
-            print("no password")
+            let alert = UIAlertController(title: nil, message: "No password", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                alert.dismiss(animated: false, completion: nil)
+            }))
+            self.present(alert, animated: true)
             return
         }
 
         guard let retypedPassword = retypePasswordInputView.textField.text else {
-            print("no password")
+            let alert = UIAlertController(title: nil, message: "No password", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                alert.dismiss(animated: false, completion: nil)
+            }))
+            self.present(alert, animated: true)
             return
         }
         
         if password != retypedPassword {
-            print("Passwords are not the same")
+            let alert = UIAlertController(title: nil, message: "Passwords are not the same", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                alert.dismiss(animated: false, completion: nil)
+            }))
+            self.present(alert, animated: true)
             return
         }
         authService.initUserDefaults()
@@ -99,7 +115,11 @@ class RegistrationController: UIViewController {
             let controller = GalleryViewController()
             navigationController?.pushViewController(controller, animated: false)
         } else {
-            print("error")
+            let alert = UIAlertController(title: nil, message: "Error!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                alert.dismiss(animated: false, completion: nil)
+            }))
+            self.present(alert, animated: true)
         }
     }
 }

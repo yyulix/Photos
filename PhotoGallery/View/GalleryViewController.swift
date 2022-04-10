@@ -82,20 +82,23 @@ class GalleryViewController: UIViewController {
     }
 
     fileprivate func getPhotos() {
+
         let manager = PHImageManager.default()
         let requestOptions = PHImageRequestOptions()
         requestOptions.isSynchronous = false
         requestOptions.deliveryMode = .highQualityFormat
         let fetchOptions = PHFetchOptions()
+
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        let results: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-        self.currentImage = results.count
-        if results.count <= 100 {
-            self.amountOfPictures = results.count
+
+        let result: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        self.currentImage = result.count
+        if result.count <= 100 {
+            self.amountOfPictures = result.count
         }
-        if results.count > 0 {
+        if result.count > 0 {
             for i in 0..<self.amountOfPictures {
-                let asset = results.object(at: i)
+                let asset = result.object(at: i)
                 let size = CGSize(width: 1000, height: 1000)
                 manager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: requestOptions) { (image, _) in
                     if let image = image {
@@ -104,6 +107,12 @@ class GalleryViewController: UIViewController {
                     }
                 }
             }
+        } else {
+            let alert = UIAlertController(title: nil, message: "There are no photos!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                alert.dismiss(animated: false, completion: nil)
+            }))
+            self.present(alert, animated: true)
         }
     }
 

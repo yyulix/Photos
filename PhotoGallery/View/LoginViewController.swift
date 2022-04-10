@@ -74,14 +74,32 @@ class LoginViewController: UIViewController {
     }
 
     @objc func SignIn() {
-        guard let username = usernameInputView.textField.text else { return }
-        guard let password = passwordInputView.textField.text else { return }
+        guard let username = usernameInputView.textField.text else {
+            let alert = UIAlertController(title: nil, message: "Empty entry", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                alert.dismiss(animated: false, completion: nil)
+            }))
+            self.present(alert, animated: true)
+            return
+        }
+        guard let password = passwordInputView.textField.text else {
+            let alert = UIAlertController(title: nil, message: "Empty entry", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                alert.dismiss(animated: false, completion: nil)
+            }))
+            self.present(alert, animated: true)
+            return
+        }
         if username != "" {
             if authService.signIn(username: username, password: password) == true {
                 let controller = GalleryViewController()
                 navigationController?.pushViewController(controller, animated: false)
             } else {
-                print("error")
+                let alert = UIAlertController(title: nil, message: "Error!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                    alert.dismiss(animated: false, completion: nil)
+                }))
+                self.present(alert, animated: true)
             }
         }
     }
