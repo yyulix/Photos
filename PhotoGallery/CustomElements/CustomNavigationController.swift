@@ -20,6 +20,9 @@ class CustomNavigationController: UINavigationController {
     }
 
     func setupNavigationBar() {
+        
+        navigationItem.hidesBackButton = true
+        
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.backgroundColor = UIColor.AppColors.accentColor

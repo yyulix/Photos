@@ -10,8 +10,8 @@ import UIKit
 final class CustomRoundedButton: UIView {
 
     private struct UIConstants {
-        static let height = 50.0
-        static let width = 200.0
+        static let height = 40.0
+        static let width = 150.0
         static let fontSize = 16.0
     }
 

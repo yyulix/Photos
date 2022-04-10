@@ -14,17 +14,21 @@ struct AuthService {
     private let defaults = UserDefaults.standard
 
     enum userDefaultKeys : String {
-        case users = "list_of_users"
-        case currentUser = "current_user"
-        case userPhoto = "user_photo"
+        case users = "list_of_users_"
+        case currentUser = "current_user_"
+        case userPhoto = "user_photo_"
     }
 
-    func setCurrentUser(_ login:String) {
-        defaults.set(login, forKey: userDefaultKeys.users.rawValue)
+    private func setCurrentUser(username: String) {
+        defaults.set(username, forKey: userDefaultKeys.currentUser.rawValue)
+    }
+
+    func signOut() {
+        setCurrentUser(username: "")
     }
 
     func getCurrentUser() -> String? {
-        guard let username = defaults.string(forKey: userDefaultKeys.currentUser.rawValue) else { return nil }
+        let username = defaults.string(forKey: userDefaultKeys.currentUser.rawValue)
         return username
     }
 
@@ -38,13 +42,22 @@ struct AuthService {
     }
 
     func getProfilePicture() -> String? {
-
         guard let user = getCurrentUser() else {return nil}
-
-        let dictionary = defaults.dictionary(forKey: userDefaultKeys.userPhoto.rawValue) as! [String:String]
-        return dictionary[user]
+        guard let dictionary = defaults.dictionary(forKey: userDefaultKeys.userPhoto.rawValue) as? [String:String] else {
+            return nil
+        }
+        guard let picture = dictionary[user] else {
+            return nil
+        }
+        return picture
     }
 
+    func getProfilePicture(username: String) -> String? {
+        
+        let dictionary = defaults.dictionary(forKey: userDefaultKeys.userPhoto.rawValue) as! [String:String]
+        return dictionary[username]
+    }
+    
     func initUserDefaults() -> Bool {
 
         if defaults.dictionary(forKey: userDefaultKeys.userPhoto.rawValue) == nil {
@@ -67,24 +80,39 @@ struct AuthService {
         return false
     }
 
+    func getAllUsers() -> [String] {
+        guard let users = defaults.dictionary(forKey: userDefaultKeys.users.rawValue) else { return []}
+        
+        let array = Array(users.keys)
+        var result : [String] = []
+        
+        for user in array {
+            if user != "" {
+                result.append(user)
+            }
+        }
+        return result
+    }
+
     func signIn(username: String, password: String) -> Bool {
         guard let users = defaults.dictionary(forKey: userDefaultKeys.users.rawValue) else { return false }
         guard let currentUser = users[username] else { return false }
-        if currentUser as! String == password { return true }
-        return false
-    }
-
-    func signUp(username: String, password: String) -> Bool {
-        var dictionary = defaults.dictionary(forKey: userDefaultKeys.users.rawValue) as! [String:String]
-        if dictionary[username] == nil {
-            dictionary[username] = password
-            defaults.set(dictionary, forKey: userDefaultKeys.users.rawValue)
+        if currentUser as! String == password {
+            setCurrentUser(username: username)
             return true
         }
         return false
     }
 
-    func signOut() {
-        defaults.set("", forKey: userDefaultKeys.currentUser.rawValue)
+    func signUp(username: String, password: String) -> Bool {
+        let name = username.lowercased()
+        var dictionary = defaults.dictionary(forKey: userDefaultKeys.users.rawValue) as! [String:String]
+        if dictionary[name] == nil {
+            dictionary[name] = password
+            defaults.set(dictionary, forKey: userDefaultKeys.users.rawValue)
+            setCurrentUser(username: name)
+            return true
+        }
+        return false
     }
 }

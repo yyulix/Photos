@@ -52,6 +52,8 @@ class RegistrationController: UIViewController {
         navigationController?.hidesBarsOnSwipe = true
         view.backgroundColor = .white
         title = "Registration"
+        navigationController?.navigationItem.setHidesBackButton(true, animated: true)
+        navigationController?.navigationItem.hidesBackButton = true
         configureInputsStackView()
     }
 

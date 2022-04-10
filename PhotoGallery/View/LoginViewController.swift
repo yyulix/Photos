@@ -42,6 +42,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.hidesBarsOnSwipe = true
+        navigationController?.navigationItem.setHidesBackButton(true, animated: true)
+        navigationController?.navigationItem.hidesBackButton = true
+        if authService.getCurrentUser() != "" {
+            let controller = CustomNavigationController(rootViewController: GalleryViewController())
+            controller.modalPresentationStyle = .fullScreen
+            self.present(controller, animated: false)
+        }
+        
         view.backgroundColor = .white
         title = "Sign In"
         configureInputsStackView()
@@ -60,19 +68,21 @@ class LoginViewController: UIViewController {
     }
     
     @objc func SignUp(){
-        let controller = RegistrationController()
-        navigationController?.pushViewController(controller, animated: false)
+        let controller = CustomNavigationController(rootViewController: RegistrationController())
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: false)
     }
 
     @objc func SignIn() {
         guard let username = usernameInputView.textField.text else { return }
         guard let password = passwordInputView.textField.text else { return }
-        authService.initUserDefaults()
-        if authService.signIn(username: username, password: password) == true {
-            let controller = GalleryViewController()
-            navigationController?.pushViewController(controller, animated: false)
-        } else {
-            print("error")
+        if username != "" {
+            if authService.signIn(username: username, password: password) == true {
+                let controller = GalleryViewController()
+                navigationController?.pushViewController(controller, animated: false)
+            } else {
+                print("error")
+            }
         }
     }
 }

@@ -15,7 +15,8 @@ final class AttributedCustomButton: UIButton {
 
     // MARK: - Public Properties
     // MARK: - Private Properties
-    // MARK: - Initializers
+    // MARK: - Initialisers
+
     init(firstPart: String, secondPart: String) {
         super.init(frame: .zero)
         let attributedTitle = NSMutableAttributedString(

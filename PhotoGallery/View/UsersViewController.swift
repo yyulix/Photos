@@ -19,6 +19,13 @@ class UsersViewController: UIViewController {
 
     var users : [String] = []
     
+    private lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Back", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        return button
+    }()
+    
     private lazy var tableView: UITableView = {
         let table = UITableView()
         table.backgroundColor = UIColor.white
@@ -53,15 +60,23 @@ class UsersViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.backgroundColor = UIColor.AppColors.accentColor
 
+        backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: backButton)
+        
         view.addSubview(tableView)
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.rowHeight = UIConstants.rowHeight
 
         tableView.dataSource = self
         tableView.delegate = self
+    }
+
+    @objc private func back(){
+        let controller = CustomNavigationController(rootViewController: GalleryViewController())
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: false)
     }
 }
 
@@ -72,7 +87,7 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 150
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,7 +96,7 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 18.0)
         cell.detailTextLabel?.text = "@" + users[indexPath.row].lowercased()
         cell.detailTextLabel?.textColor = UIColor.black
-        var image = service.getProfilePicture(username: users[indexPath.row])?.toImage() ?? UIImage(named: "placeholder.png")
+        let image = service.getProfilePicture(username: users[indexPath.row])?.toImage() ?? UIImage(named: "placeholder.png")
         cell.imageView?.image = image
         cell.imageView?.sizeToFit()
         cell.imageView?.clipsToBounds = true

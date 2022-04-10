@@ -9,23 +9,53 @@
 /* Begin PBXBuildFile section */
 		FB59F7232801CC8700DC547D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F7222801CC8700DC547D /* AppDelegate.swift */; };
 		FB59F7252801CC8700DC547D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F7242801CC8700DC547D /* SceneDelegate.swift */; };
-		FB59F7272801CC8700DC547D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F7262801CC8700DC547D /* ViewController.swift */; };
+		FB59F7272801CC8700DC547D /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F7262801CC8700DC547D /* RegistrationController.swift */; };
 		FB59F72A2801CC8700DC547D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB59F7282801CC8700DC547D /* Main.storyboard */; };
 		FB59F72D2801CC8700DC547D /* PhotoGallery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB59F72B2801CC8700DC547D /* PhotoGallery.xcdatamodeld */; };
 		FB59F72F2801CC8A00DC547D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB59F72E2801CC8A00DC547D /* Assets.xcassets */; };
 		FB59F7322801CC8A00DC547D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB59F7302801CC8A00DC547D /* LaunchScreen.storyboard */; };
+		FB59F73A2801DC9600DC547D /* PHAssetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F7392801DC9600DC547D /* PHAssetExtension.swift */; };
+		FB59F74228021B7900DC547D /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F74128021B7900DC547D /* InputField.swift */; };
+		FB59F74428021B9D00DC547D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F74328021B9D00DC547D /* UIColorExtension.swift */; };
+		FB59F74628021C7900DC547D /* AttributedCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F74528021C7900DC547D /* AttributedCustomButton.swift */; };
+		FB59F74828021CBF00DC547D /* CustomRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F74728021CBF00DC547D /* CustomRoundedButton.swift */; };
+		FB59F74A28021D2F00DC547D /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F74928021D2F00DC547D /* UIImageExtension.swift */; };
+		FB59F74E280221AB00DC547D /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F74D280221AB00DC547D /* CustomNavigationController.swift */; };
+		FB59F75228022A0B00DC547D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F75128022A0B00DC547D /* LoginViewController.swift */; };
+		FB59F754280231B400DC547D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F753280231B400DC547D /* AuthService.swift */; };
+		FB59F7572802460D00DC547D /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F7562802460D00DC547D /* GalleryViewController.swift */; };
+		FB59F75928024E5000DC547D /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F75828024E5000DC547D /* PhotoCell.swift */; };
+		FB59F75D2802674E00DC547D /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F75C2802674E00DC547D /* UsersViewController.swift */; };
+		FB59F75F28031B0800DC547D /* StringToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F75E28031B0800DC547D /* StringToImage.swift */; };
+		FB59F761280335C200DC547D /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F760280335C200DC547D /* CustomTabBarViewController.swift */; };
+		FB59F7632803447200DC547D /* DetailedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB59F7622803447100DC547D /* DetailedPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FB59F71F2801CC8700DC547D /* PhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB59F7222801CC8700DC547D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB59F7242801CC8700DC547D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FB59F7262801CC8700DC547D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB59F7262801CC8700DC547D /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		FB59F7292801CC8700DC547D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB59F72C2801CC8700DC547D /* PhotoGallery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhotoGallery.xcdatamodel; sourceTree = "<group>"; };
 		FB59F72E2801CC8A00DC547D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB59F7312801CC8A00DC547D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB59F7332801CC8A00DC547D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB59F7392801DC9600DC547D /* PHAssetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAssetExtension.swift; sourceTree = "<group>"; };
+		FB59F74128021B7900DC547D /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		FB59F74328021B9D00DC547D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		FB59F74528021C7900DC547D /* AttributedCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedCustomButton.swift; sourceTree = "<group>"; };
+		FB59F74728021CBF00DC547D /* CustomRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedButton.swift; sourceTree = "<group>"; };
+		FB59F74928021D2F00DC547D /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		FB59F74D280221AB00DC547D /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		FB59F75128022A0B00DC547D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FB59F753280231B400DC547D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FB59F7562802460D00DC547D /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		FB59F75828024E5000DC547D /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		FB59F75C2802674E00DC547D /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		FB59F75E28031B0800DC547D /* StringToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToImage.swift; sourceTree = "<group>"; };
+		FB59F760280335C200DC547D /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		FB59F7622803447100DC547D /* DetailedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +88,71 @@
 		FB59F7212801CC8700DC547D /* PhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
-				FB59F7222801CC8700DC547D /* AppDelegate.swift */,
-				FB59F7242801CC8700DC547D /* SceneDelegate.swift */,
-				FB59F7262801CC8700DC547D /* ViewController.swift */,
+				FB59F7552802327A00DC547D /* Model */,
+				FB59F74F2802222B00DC547D /* Application */,
+				FB59F74C28021DB000DC547D /* CustomElements */,
+				FB59F7502802223B00DC547D /* View */,
+				FB59F74B28021D8B00DC547D /* Extensions */,
 				FB59F7282801CC8700DC547D /* Main.storyboard */,
 				FB59F72E2801CC8A00DC547D /* Assets.xcassets */,
 				FB59F7302801CC8A00DC547D /* LaunchScreen.storyboard */,
 				FB59F7332801CC8A00DC547D /* Info.plist */,
 				FB59F72B2801CC8700DC547D /* PhotoGallery.xcdatamodeld */,
+				FB59F7392801DC9600DC547D /* PHAssetExtension.swift */,
 			);
 			path = PhotoGallery;
+			sourceTree = "<group>";
+		};
+		FB59F74B28021D8B00DC547D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FB59F74328021B9D00DC547D /* UIColorExtension.swift */,
+				FB59F74928021D2F00DC547D /* UIImageExtension.swift */,
+				FB59F75E28031B0800DC547D /* StringToImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FB59F74C28021DB000DC547D /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				FB59F74728021CBF00DC547D /* CustomRoundedButton.swift */,
+				FB59F74528021C7900DC547D /* AttributedCustomButton.swift */,
+				FB59F74128021B7900DC547D /* InputField.swift */,
+				FB59F74D280221AB00DC547D /* CustomNavigationController.swift */,
+				FB59F75828024E5000DC547D /* PhotoCell.swift */,
+				FB59F760280335C200DC547D /* CustomTabBarViewController.swift */,
+			);
+			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		FB59F74F2802222B00DC547D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FB59F7222801CC8700DC547D /* AppDelegate.swift */,
+				FB59F7242801CC8700DC547D /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FB59F7502802223B00DC547D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB59F7262801CC8700DC547D /* RegistrationController.swift */,
+				FB59F75128022A0B00DC547D /* LoginViewController.swift */,
+				FB59F7562802460D00DC547D /* GalleryViewController.swift */,
+				FB59F75C2802674E00DC547D /* UsersViewController.swift */,
+				FB59F7622803447100DC547D /* DetailedPhoto.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB59F7552802327A00DC547D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB59F753280231B400DC547D /* AuthService.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +226,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB59F7272801CC8700DC547D /* ViewController.swift in Sources */,
+				FB59F75228022A0B00DC547D /* LoginViewController.swift in Sources */,
+				FB59F75F28031B0800DC547D /* StringToImage.swift in Sources */,
+				FB59F7272801CC8700DC547D /* RegistrationController.swift in Sources */,
 				FB59F7232801CC8700DC547D /* AppDelegate.swift in Sources */,
+				FB59F73A2801DC9600DC547D /* PHAssetExtension.swift in Sources */,
+				FB59F75928024E5000DC547D /* PhotoCell.swift in Sources */,
+				FB59F761280335C200DC547D /* CustomTabBarViewController.swift in Sources */,
+				FB59F7572802460D00DC547D /* GalleryViewController.swift in Sources */,
+				FB59F75D2802674E00DC547D /* UsersViewController.swift in Sources */,
+				FB59F74828021CBF00DC547D /* CustomRoundedButton.swift in Sources */,
 				FB59F7252801CC8700DC547D /* SceneDelegate.swift in Sources */,
+				FB59F74428021B9D00DC547D /* UIColorExtension.swift in Sources */,
 				FB59F72D2801CC8700DC547D /* PhotoGallery.xcdatamodeld in Sources */,
+				FB59F74628021C7900DC547D /* AttributedCustomButton.swift in Sources */,
+				FB59F74228021B7900DC547D /* InputField.swift in Sources */,
+				FB59F754280231B400DC547D /* AuthService.swift in Sources */,
+				FB59F7632803447200DC547D /* DetailedPhoto.swift in Sources */,
+				FB59F74A28021D2F00DC547D /* UIImageExtension.swift in Sources */,
+				FB59F74E280221AB00DC547D /* CustomNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,9 +394,11 @@
 				DEVELOPMENT_TEAM = Z33ZD2X6PY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoGallery/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -308,7 +410,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,9 +424,11 @@
 				DEVELOPMENT_TEAM = Z33ZD2X6PY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoGallery/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -336,7 +440,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
